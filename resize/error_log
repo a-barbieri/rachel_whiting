@@ -1,0 +1,49 @@
+[01-Jun-2012 08:27:52] PHP Warning:  scandir(./content/1.commissioned-photography) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:27:52] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:27:52] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 254
+[01-Jun-2012 08:27:52] PHP Warning:  scandir(./content/2.tear-sheets) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:27:52] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:27:52] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 254
+[01-Jun-2012 08:27:52] PHP Warning:  scandir(./content/3.personal-photography) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:27:52] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:27:52] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 254
+[01-Jun-2012 08:28:18] PHP Warning:  scandir(./content/1.commissioned-photography) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:18] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:18] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 256
+[01-Jun-2012 08:28:18] PHP Warning:  scandir(./content/2.tear-sheets) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:18] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:18] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 256
+[01-Jun-2012 08:28:18] PHP Warning:  scandir(./content/3.personal-photography) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:18] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:18] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 256
+[01-Jun-2012 08:28:37] PHP Warning:  scandir(././content/1.commissioned-photography) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:37] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:37] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 254
+[01-Jun-2012 08:28:37] PHP Warning:  scandir(././content/2.tear-sheets) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:37] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:37] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 254
+[01-Jun-2012 08:28:37] PHP Warning:  scandir(././content/3.personal-photography) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:37] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 252
+[01-Jun-2012 08:28:37] PHP Warning:  Invalid argument supplied for foreach() in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 254
+[01-Jun-2012 08:49:28] PHP Parse error:  syntax error, unexpected '}' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 289
+[01-Jun-2012 08:49:29] PHP Parse error:  syntax error, unexpected '}' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 289
+[01-Jun-2012 08:53:21] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:53:23] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:53:39] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:53:43] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:53:45] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:54:00] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:54:01] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 307
+[01-Jun-2012 08:54:22] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 298
+[01-Jun-2012 08:54:24] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 298
+[01-Jun-2012 08:54:44] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 299
+[01-Jun-2012 08:54:54] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 301
+[01-Jun-2012 08:54:55] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 301
+[01-Jun-2012 08:55:03] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 301
+[01-Jun-2012 08:55:09] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 299
+[01-Jun-2012 08:55:37] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 299
+[01-Jun-2012 08:55:49] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 302
+[01-Jun-2012 08:55:50] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 302
+[01-Jun-2012 08:55:52] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 302
+[01-Jun-2012 08:56:47] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 302
+[01-Jun-2012 08:56:54] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home7/twentyt2/public_html/__rachelwhiting/resize/index.php on line 302

@@ -1,0 +1,137 @@
+
+		</div><!-- .wrap -->
+		
+		<!-- S C R I P T S (default) -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="{{ page.root_path }}public/js/plugins.js"></script>
+		<script type="text/javascript" src="{{ page.root_path }}public/js/action.js"></script>
+			
+			
+		{% if (page.slug == '') %}		
+			{#   HOMEPAGE settings   #}
+			
+			<!-- S C R I P T (random image) -->
+			<script type="text/javascript">
+			
+				jQuery(document).ready(function($){
+				
+				/*	SLIDESHOW
+				 *  ------------------------------------------
+				 *	
+				 *  ------------------------------------------
+				 */			 
+					$.supersized({
+						fit_portrait		: 0,
+						fit_always			: 1,
+						slide_interval      : 3000,			// Length between transitions
+						transition          : 1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 
+															// 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+						transition_speed	: 700,			// Speed of transition			   
+						image_protect		: 0,
+						random				: 1,
+						slides 				:  	[
+							{% for image in page.images %}
+								{% if image.is_last %}
+									{image : '{{image.url}}'}
+								{% else %}
+									{image : '{{image.url}}'},
+								{% endif %}
+							{% endfor %}
+												]
+					});
+			    });	    
+			</script>
+
+
+		{% elseif (page.slug == 'about-and-contact') %}	
+			{# ABOUT & CONTACT page doesn't have any setting, so do nothing #}
+
+		
+		{% else %}
+			{#   CATEGORY settings   #}
+			
+			<!-- S C R I P T (slideshow) -->
+			<script type="text/javascript" language="javascript">
+	
+				jQuery(document).ready(function() {
+				
+					$('#supersized img').hide();
+				
+				/*	SLIDESHOW
+				 *  ------------------------------------------
+				 *	• call the slideshow based on hashchange
+				 *  ------------------------------------------
+				 */			 
+					function slideshow( slide ) {		
+						
+						// Grab all of our image urls from the page
+						// rewriting them to the full sized images.
+						
+						var images = [];
+						jQuery('#thumb-list img').each(function() {
+							images.push({'image' : $(this).attr('src').replace('_sml','') });
+						});
+						
+						// Run slideshow plugin
+						return $.supersized({
+							fit_portrait		: 0,
+							fit_always			: 1,
+							// Start from the slected slide
+							start_slide		 : slide,
+							slide_interval   : 3000,
+							transition       : 1,
+							// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right,
+							// 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+							transition_speed : 300,		
+							image_protect	 : 0,
+							slides			 : images
+						});
+					}
+					
+				/*	URL FRAGMENT
+				 *  -------------------------------------------
+				 */
+					$(window).bind( 'hashchange', function(e) {
+					
+					    // Get URL fragment that control the slideshow 
+					    var hash = $.param.fragment();
+					    var slideshow_status = $('#supersized li').length;
+					    
+					    // If you click a thumb
+					    if ( hash !== '' && slideshow_status == '0' ) {
+					    	// Hide thumbs and show slideshow navigation
+					    	$('#thumb-list').fadeOut( 300, function() {
+					    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+					    		// Create the slideshow
+						    	slideshow( hash );
+					    	});
+					    } 
+					});
+				
+					// Trigger the hashchange event when the page loads
+					$(window).trigger( 'hashchange' );
+	
+				});
+			</script>
+
+		{% endif %}	
+				
+		<!-- S C R I P T (font) -->
+		<script type="text/javascript">
+		
+			// Webfont crossbrowser script
+			WebFontConfig = {custom: { families: ['sans-serif'],
+				urls: [ '{{ page.root_path }}public/css/fontface.css' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+			
+		</script>
+	</body>
+</html>

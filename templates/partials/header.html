@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>{{ page.name }}, {{ page.title }}</title>
+
+		<!-- S T Y L E (default) -->
+		<link rel="stylesheet" media="screen" href="{{ page.root_path }}public/css/style.css" />
+		<link rel="stylesheet" media="screen" href="{{ page.root_path }}public/css/queries.css" />
+		<link rel="icon" href="{{ page.root_path }}favicon.png" type="image/png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+	<body>
+
+		<div class="wrap">
+
+		<header>
+
+			<div class="full clearfix center-txt uppercase">
+				<hgroup>
+						<h2><a href="{{ page.root_path }}">{{ page.name }}</a></h2>
+						<p id="sub-header">{{ page.profession }}</p>
+				</hgroup>
+
+				<nav>
+					<ul>
+						{% for child in page.root %}
+
+							<li>
+								<a href="{{ child.url }}" class="{% if (page.url == child.url) %} active-link {% endif %}">{{child.title}}</a>
+							</li>
+
+						{% endfor %}
+					</ul>
+				</nav>
+
+			</div>
+
+		</header>

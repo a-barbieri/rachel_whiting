@@ -1,0 +1,10 @@
+{% include 'partials/header.html' %}
+
+{% include 'partials/assets/images.html' %}
+
+		<!--Arrow Navigation-->
+		<a id="back-to-thumbs" class="slide-nav" href="{% if (page.url == child.url) %} {{ child.url }} {% endif %}"></a>
+		<a id="prevslide" class="load-item slide-nav"></a>
+		<a id="nextslide" class="load-item slide-nav"></a>
+
+{% include 'partials/footer.html' %}

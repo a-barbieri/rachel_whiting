@@ -1,0 +1,7 @@
+<div id="thumb-list" class="tabs">
+	<ul>
+		{% for image in page.images|reverse %}
+		    <li><a href="#{{ loop.index }}"><img src="{{ image.small }}" alt="{{ image.title }}"></a></li>
+		{% endfor %}
+	</ul>
+</div>

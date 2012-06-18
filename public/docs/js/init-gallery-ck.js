@@ -1,0 +1,1 @@
+$(function(){if($("div.image").length>1){$("div.image").wrapAll("<div id='image-wrapper'><div id='image-holder'></div></div>");$("div.image").show();Gallery.init($("div#image-holder"),560,$("p#gallery-count").children("span")[0],$("a#next-image"),$("a#previous-image"))}else{$("p#gallery-count, div#gallery-navigation").hide();$("p#project-count").show()}});
