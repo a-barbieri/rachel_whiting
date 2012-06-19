@@ -40,7 +40,7 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "favicon.png\" type=\"image/png\" />
-\t\t<meta name=\"viewport\" content=\"width=device-width\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 
 \t</head>
 \t<body>

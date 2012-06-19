@@ -1,41 +1,107 @@
 /*	======================================================================
- *	Smartphone -- 320px
+ *	Landscape phones and down
  *	======================================================================
- *
- *	Smartphone Portrait
- *	----------------------------------------------------------------------
- */
-
-@media screen and (max-width: 320px) {
-
-}
-
-/*	Smartphone Landscape
- *	----------------------------------------------------------------------
  */
 
 @media screen and (max-width: 480px) {
+
+	.visible-phone {display: block}
+	.hidden-tablet {display: none}
+	.hidden-desktop {display: none}
 
 }
 
 
 
 /*	======================================================================
- *	Tablet -- 768px
+ *	Landscape phone to portrait tablet
  *	======================================================================
- *
- *	Tablet Portrait
- *	----------------------------------------------------------------------
  */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+
+	.visible-phone {display: block}
+	.visible-tablet {display: block}
+	.hidden-desktop {display: none}
 
 }
 
-/*	Tablet Landscape
- *	----------------------------------------------------------------------
+
+
+/*	======================================================================
+ *	Portrait tablet to landscape and desktop
+ *	======================================================================
  */
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) and (max-width: 979px) {
+
+	.visible-tablet {display: block}
+	.visible-desktop {display: block}
+	.hidden-phone {display: none}
 
 }
+
+
+
+/*	======================================================================
+ *	Large desktop
+ *	======================================================================
+ */
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+
+	.visible-desktop {display: block}
+	.hidden-phone {display: none}
+	.hidden-tablet {display: none}
+
+}
+
+
+
+/* =============================================================================
+    M E D I A   Q U E R I E S
+   ========================================================================== */
+
+// Column widths:
+// 		165px	330px	495px	660px	825px	990px	1175px	1320px	1485px	1650px	1815px	1980px	2145px
+// 		1		2		3		4		5		6		7		8		9		10		11		12		13
+
+
+/*
+@media (max-width: 494px) {
+	#thumb-list {
+		max-width: 330px;
+	}
+}
+@media (min-width: 495px) and (max-width: 824px) {
+	#thumb-list {
+		max-width: 495px;
+	}
+}
+*/
+@media (min-width: 825px) and (max-width: 1174px) {
+	#thumb-list {
+		max-width: 660px;
+	}
+}
+@media (min-width: 1175px) and (max-width: 1484px) {
+	#thumb-list {
+		max-width: 990px;
+	}
+}
+@media (min-width: 1485px) and (max-width: 1814px) {
+	#thumb-list {
+		max-width: 1320px;
+	}
+}
+@media (min-width: 1815px) and (max-width: 2144px) {
+	#thumb-list {
+		max-width: 1650px;
+	}
+}
+@media (min-width: 2145px) {
+	#thumb-list {
+		max-width: 1980px;
+	}
+}
+
