@@ -15,19 +15,19 @@
 
 				jQuery(document).ready(function($){
 
+
 				/*	Workaround to have left/right margins on slideshow
+				 *  https://github.com/buildinternet/supersized/issues/72
 				 *	----------------------------------------------------------------------
 				 */
-				 	function resize_slideshow()
-				 	{
+				 	function resize_slideshow(){
 				 		var	margin = 20;
-						$('#supersized')
-							.width( $(window).width() - margin * 2)
-							.css({ 'left': margin });
+				 		$('#supersized').css({ 'left': margin });
+						$('#supersized').width( $(window).width() - margin * 2 );
 					}
 					$(window)
-						.resize( function() {resize_slideshow()} )
-						.trigger( 'resize' );
+						.resize( function() { resize_slideshow() })
+						.trigger('resize');
 
 
 				/*	SLIDESHOW
@@ -70,18 +70,21 @@
 				jQuery(document).ready(function() {
 
 				/*	Workaround to have left/right margins on slideshow
+				 *  https://github.com/buildinternet/supersized/issues/72
 				 *	----------------------------------------------------------------------
 				 */
-				 	function resize_slideshow()
-				 	{
-				 		var	margin = 120;
+				 	function resize_slideshow(margin){
 						$('#supersized')
-							.width( $(window).width() - margin * 2)
-							.css({ 'left': margin });
+							.width($(window).width() - margin * 2);
 					}
 					$(window)
-						.resize( function() {resize_slideshow()} )
-						.trigger( 'resize' );
+						.resize( function() {
+					 		var	margin = $('#supersized').css('left'),
+					 			margin = parseInt(margin, 10);
+							resize_slideshow(margin)
+						})
+						.trigger('resize');
+
 
 				/*	Hide slideshow
 				 *	----------------------------------------------------------------------

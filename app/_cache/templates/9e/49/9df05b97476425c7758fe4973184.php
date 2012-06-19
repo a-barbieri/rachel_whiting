@@ -41,19 +41,19 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t\t\tjQuery(document).ready(function(\$){
 
+
 \t\t\t\t/*\tWorkaround to have left/right margins on slideshow
+\t\t\t\t *  https://github.com/buildinternet/supersized/issues/72
 \t\t\t\t *\t----------------------------------------------------------------------
 \t\t\t\t */
-\t\t\t\t \tfunction resize_slideshow()
-\t\t\t\t \t{
+\t\t\t\t \tfunction resize_slideshow(){
 \t\t\t\t \t\tvar\tmargin = 20;
-\t\t\t\t\t\t\$('#supersized')
-\t\t\t\t\t\t\t.width( \$(window).width() - margin * 2)
-\t\t\t\t\t\t\t.css({ 'left': margin });
+\t\t\t\t \t\t\$('#supersized').css({ 'left': margin });
+\t\t\t\t\t\t\$('#supersized').width( \$(window).width() - margin * 2 );
 \t\t\t\t\t}
 \t\t\t\t\t\$(window)
-\t\t\t\t\t\t.resize( function() {resize_slideshow()} )
-\t\t\t\t\t\t.trigger( 'resize' );
+\t\t\t\t\t\t.resize( function() { resize_slideshow() })
+\t\t\t\t\t\t.trigger('resize');
 
 
 \t\t\t\t/*\tSLIDESHOW
@@ -126,18 +126,21 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t\tjQuery(document).ready(function() {
 
 \t\t\t\t/*\tWorkaround to have left/right margins on slideshow
+\t\t\t\t *  https://github.com/buildinternet/supersized/issues/72
 \t\t\t\t *\t----------------------------------------------------------------------
 \t\t\t\t */
-\t\t\t\t \tfunction resize_slideshow()
-\t\t\t\t \t{
-\t\t\t\t \t\tvar\tmargin = 120;
+\t\t\t\t \tfunction resize_slideshow(margin){
 \t\t\t\t\t\t\$('#supersized')
-\t\t\t\t\t\t\t.width( \$(window).width() - margin * 2)
-\t\t\t\t\t\t\t.css({ 'left': margin });
+\t\t\t\t\t\t\t.width(\$(window).width() - margin * 2);
 \t\t\t\t\t}
 \t\t\t\t\t\$(window)
-\t\t\t\t\t\t.resize( function() {resize_slideshow()} )
-\t\t\t\t\t\t.trigger( 'resize' );
+\t\t\t\t\t\t.resize( function() {
+\t\t\t\t\t \t\tvar\tmargin = \$('#supersized').css('left'),
+\t\t\t\t\t \t\t\tmargin = parseInt(margin, 10);
+\t\t\t\t\t\t\tresize_slideshow(margin)
+\t\t\t\t\t\t})
+\t\t\t\t\t\t.trigger('resize');
+
 
 \t\t\t\t/*\tHide slideshow
 \t\t\t\t *\t----------------------------------------------------------------------
@@ -206,7 +209,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t";
         }
-        // line 152
+        // line 155
         echo "
 \t\t<!-- S C R I P T (font) -->
 \t\t<script type=\"text/javascript\">
@@ -214,7 +217,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t// Webfont crossbrowser script
 \t\t\tWebFontConfig = {custom: { families: ['sans-serif'],
 \t\t\t\turls: [ '";
-        // line 158
+        // line 161
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "public/css/fontface.css' ] }

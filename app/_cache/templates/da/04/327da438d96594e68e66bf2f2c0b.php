@@ -66,19 +66,20 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         echo "</p>
 \t\t\t\t</hgroup>
 
-\t\t\t\t<nav>
+\t\t\t\t<p class=\"visible-phone hidden-tablet hidden-desktop\"><a>MENU</a></p>
+\t\t\t\t<nav class=\"hidden-phone visible-tablet visible-desktop\">
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t";
-        // line 28
+        // line 29
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($_page_, "root"));
         foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-            // line 29
+            // line 30
             echo "
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"";
-            // line 31
+            // line 32
             if (isset($context["child"])) { $_child_ = $context["child"]; } else { $_child_ = null; }
             echo $this->getAttribute($_child_, "url");
             echo "\" class=\"";
@@ -98,7 +99,7 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 35
+        // line 36
         echo "\t\t\t\t\t</ul>
 \t\t\t\t</nav>
 
