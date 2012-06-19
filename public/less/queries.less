@@ -1,4 +1,19 @@
 /*	======================================================================
+ *	MEDIA QUERIES -- RESPONSIVE LAYOUT
+ *	======================================================================
+ *
+ *	info@alessandrobarbieri.net
+ *
+ *	Column widths:
+ *	----------------------------------------------------------------------
+ *
+ *	165px	330px	495px	660px	825px	990px	1175px	1320px	1485px	1650px	1815px	1980px	2145px
+ *	1		2		3		4		5		6		7		8		9		10		11		12		13
+ *
+ */
+
+
+/*	======================================================================
  *	Landscape phones and down
  *	======================================================================
  */
@@ -9,6 +24,9 @@
 	.hidden-tablet {display: none}
 	.hidden-desktop {display: none}
 
+	#thumb-list {
+		width: 330px;
+	}
 }
 
 
@@ -16,6 +34,36 @@
 /*	======================================================================
  *	Landscape phone to portrait tablet
  *	======================================================================
+ *
+ *	Next media-queries are dedicated only to #thumb-list
+ *	DON'T ADD ANY STYLE HERE
+ *	----------------------------------------------------------------------
+ */
+
+@media screen and (max-width: 495px) {
+
+	#thumb-list {
+		width: 330px;
+	}
+}
+
+@media screen and (min-width: 496px) and (max-width: 660px) {
+
+	#thumb-list {
+		width: 495px;
+	}
+}
+
+@media screen and (min-width: 661px) and (max-width: 767px) {
+
+	#thumb-list {
+		width: 660px;
+	}
+}
+
+
+/*	Use this for any Tablet custom styling
+ *	----------------------------------------------------------------------
  */
 
 @media screen and (max-width: 767px) {
@@ -33,12 +81,34 @@
  *	======================================================================
  */
 
-@media screen and (min-width: 768px) and (max-width: 979px) {
+@media screen and (min-width: 768px) and (max-width: 825px) {
+
+	#thumb-list {
+		width: 660px;
+	}
+}
+
+@media screen and (min-width: 826px) and (max-width: 979px) {
+
+	#thumb-list {
+		max-width: 825px;
+	}
+}
+
+
+/*	Use this for any Tablet custom styling
+ *	----------------------------------------------------------------------
+ */
+
+@media screen and (min-width: 826px) and (max-width: 979px) {
 
 	.visible-tablet {display: block}
 	.visible-desktop {display: block}
 	.hidden-phone {display: none}
 
+	#thumb-list {
+		max-width: 825px;
+	}
 }
 
 
@@ -46,62 +116,45 @@
 /*	======================================================================
  *	Large desktop
  *	======================================================================
+ *
+ *	Next media-queries are dedicated only to #thumb-list
+ *	DON'T ADD ANY STYLE HERE
+ *	----------------------------------------------------------------------
  */
 
-@media screen and (min-width: 768px) and (max-width: 979px) {
-
-	.visible-desktop {display: block}
-	.hidden-phone {display: none}
-	.hidden-tablet {display: none}
-
-}
-
-
-
-/* =============================================================================
-    M E D I A   Q U E R I E S
-   ========================================================================== */
-
-// Column widths:
-// 		165px	330px	495px	660px	825px	990px	1175px	1320px	1485px	1650px	1815px	1980px	2145px
-// 		1		2		3		4		5		6		7		8		9		10		11		12		13
-
-
-/*
-@media (max-width: 494px) {
+@media screen and (min-width: 979px) and (max-width: 1174px) {
 	#thumb-list {
-		max-width: 330px;
+		max-width: 825px;
 	}
 }
-@media (min-width: 495px) and (max-width: 824px) {
-	#thumb-list {
-		max-width: 495px;
-	}
-}
-*/
-@media (min-width: 825px) and (max-width: 1174px) {
-	#thumb-list {
-		max-width: 660px;
-	}
-}
-@media (min-width: 1175px) and (max-width: 1484px) {
+@media screen and (min-width: 1175px) and (max-width: 1484px) {
 	#thumb-list {
 		max-width: 990px;
 	}
 }
-@media (min-width: 1485px) and (max-width: 1814px) {
+@media screen and (min-width: 1485px) and (max-width: 1814px) {
 	#thumb-list {
 		max-width: 1320px;
 	}
 }
-@media (min-width: 1815px) and (max-width: 2144px) {
+@media screen and (min-width: 1815px) and (max-width: 2144px) {
 	#thumb-list {
 		max-width: 1650px;
 	}
 }
-@media (min-width: 2145px) {
+@media screen and (min-width: 2145px) {
 	#thumb-list {
 		max-width: 1980px;
 	}
 }
 
+/*	Use this for Large Desktop custom styling
+ *	----------------------------------------------------------------------
+ */
+
+@media screen and (min-width: 979px) {
+
+	.visible-desktop {display: block}
+	.hidden-phone {display: none}
+	.hidden-tablet {display: none}
+}
