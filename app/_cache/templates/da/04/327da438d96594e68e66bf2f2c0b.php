@@ -30,11 +30,17 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "public/css/style.css\" />
-\t\t<link rel=\"icon\" href=\"";
+\t\t<link rel=\"stylesheet\" media=\"screen\" href=\"";
         // line 9
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
+        echo "public/css/queries.css\" />
+\t\t<link rel=\"icon\" href=\"";
+        // line 10
+        if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
+        echo $this->getAttribute($_page_, "root_path");
         echo "favicon.png\" type=\"image/png\" />
+\t\t<meta name=\"viewport\" content=\"width=device-width\">
 
 \t</head>
 \t<body>
@@ -46,7 +52,7 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
 \t\t\t<div class=\"full clearfix center-txt uppercase\">
 \t\t\t\t<hgroup>
 \t\t\t\t\t\t<h2><a href=\"";
-        // line 20
+        // line 22
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "\">";
@@ -54,7 +60,7 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         echo $this->getAttribute($_page_, "name");
         echo "</a></h2>
 \t\t\t\t\t\t<p id=\"sub-header\">";
-        // line 21
+        // line 23
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "profession");
         echo "</p>
@@ -63,16 +69,16 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
 \t\t\t\t<nav>
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t";
-        // line 26
+        // line 28
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($_page_, "root"));
         foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-            // line 27
+            // line 29
             echo "
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a href=\"";
-            // line 29
+            // line 31
             if (isset($context["child"])) { $_child_ = $context["child"]; } else { $_child_ = null; }
             echo $this->getAttribute($_child_, "url");
             echo "\" class=\"";
@@ -92,7 +98,7 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 33
+        // line 35
         echo "\t\t\t\t\t</ul>
 \t\t\t\t</nav>
 
