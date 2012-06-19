@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Rachel Whiting, Personal Photography</title>
+
+		<!-- S T Y L E (default) -->
+		<link rel="stylesheet" media="screen" href="../public/css/style.css" />
+		<link rel="stylesheet" media="screen" href="../public/css/queries.css" />
+		<link rel="icon" href="../favicon.png" type="image/png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+	<body>
+
+		<div class="wrap">
+
+		<header>
+
+			<div class="full clearfix center-txt uppercase">
+				<hgroup>
+						<h2><a href="../">Rachel Whiting</a></h2>
+						<p id="sub-header">Photographer</p>
+				</hgroup>
+
+				<nav>
+					<ul>
+						
+							<li>
+								<a href="../commissioned-photography/" class="">Commissioned Photography</a>
+							</li>
+
+						
+							<li>
+								<a href="../tear-sheets/" class="">Tear Sheets</a>
+							</li>
+
+						
+							<li>
+								<a href="../personal-photography/" class=" active-link ">Personal Photography</a>
+							</li>
+
+						
+							<li>
+								<a href="../about-and-contact/" class="">About & Contact</a>
+							</li>
+
+											</ul>
+				</nav>
+
+			</div>
+
+		</header>
+
+<div id="thumb-list" class="tabs">
+	<ul>
+				    <li><a href="#1"><img src="../content/3.personal-photography/10_sml.jpg" alt=""></a></li>
+				    <li><a href="#2"><img src="../content/3.personal-photography/09_sml.jpg" alt=""></a></li>
+				    <li><a href="#3"><img src="../content/3.personal-photography/08_sml.jpg" alt=""></a></li>
+				    <li><a href="#4"><img src="../content/3.personal-photography/07_sml.jpg" alt=""></a></li>
+				    <li><a href="#5"><img src="../content/3.personal-photography/06_sml.jpg" alt=""></a></li>
+				    <li><a href="#6"><img src="../content/3.personal-photography/05_sml.jpg" alt=""></a></li>
+				    <li><a href="#7"><img src="../content/3.personal-photography/04_sml.jpg" alt=""></a></li>
+				    <li><a href="#8"><img src="../content/3.personal-photography/03_sml.jpg" alt=""></a></li>
+				    <li><a href="#9"><img src="../content/3.personal-photography/02_sml.jpg" alt=""></a></li>
+				    <li><a href="#10"><img src="../content/3.personal-photography/01_sml.jpg" alt=""></a></li>
+			</ul>
+</div>
+		<!--Arrow Navigation-->
+		<a id="back-to-thumbs" class="slide-nav" href=""></a>
+		<a id="prevslide" class="load-item slide-nav"></a>
+		<a id="nextslide" class="load-item slide-nav"></a>
+
+
+		</div><!-- .wrap -->
+		
+		<!-- S C R I P T S (default) -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/plugins.js"></script>
+		<script type="text/javascript" src="../public/js/action.js"></script>
+			
+			
+								
+			<!-- S C R I P T (slideshow) -->
+			<script type="text/javascript" language="javascript">
+	
+				jQuery(document).ready(function() {
+				
+					$('#supersized img').hide();
+				
+				/*	SLIDESHOW
+				 *  ------------------------------------------
+				 *	• call the slideshow based on hashchange
+				 *  ------------------------------------------
+				 */			 
+					function slideshow( slide ) {		
+						
+						// Grab all of our image urls from the page
+						// rewriting them to the full sized images.
+						
+						var images = [];
+						jQuery('#thumb-list img').each(function() {
+							images.push({'image' : $(this).attr('src').replace('_sml','') });
+						});
+						
+						// Run slideshow plugin
+						return $.supersized({
+							fit_portrait		: 0,
+							fit_always			: 1,
+							// Start from the slected slide
+							start_slide		 : slide,
+							slide_interval   : 3000,
+							transition       : 1,
+							// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right,
+							// 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+							transition_speed : 300,		
+							image_protect	 : 0,
+							slides			 : images
+						});
+					}
+					
+				/*	URL FRAGMENT
+				 *  -------------------------------------------
+				 */
+					$(window).bind( 'hashchange', function(e) {
+					
+					    // Get URL fragment that control the slideshow 
+					    var hash = $.param.fragment();
+					    var slideshow_status = $('#supersized li').length;
+					    
+					    // If you click a thumb
+					    if ( hash !== '' && slideshow_status == '0' ) {
+					    	// Hide thumbs and show slideshow navigation
+					    	$('#thumb-list').fadeOut( 300, function() {
+					    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+					    		// Create the slideshow
+						    	slideshow( hash );
+					    	});
+					    } 
+					});
+				
+					// Trigger the hashchange event when the page loads
+					$(window).trigger( 'hashchange' );
+	
+				});
+			</script>
+
+			
+				
+		<!-- S C R I P T (font) -->
+		<script type="text/javascript">
+		
+			// Webfont crossbrowser script
+			WebFontConfig = {custom: { families: ['sans-serif'],
+				urls: [ '../public/css/fontface.css' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+			
+		</script>
+	</body>
+</html>

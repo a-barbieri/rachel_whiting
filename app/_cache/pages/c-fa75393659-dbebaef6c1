@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Rachel Whiting, Tear Sheets</title>
+
+		<!-- S T Y L E (default) -->
+		<link rel="stylesheet" media="screen" href="../public/css/style.css" />
+		<link rel="stylesheet" media="screen" href="../public/css/queries.css" />
+		<link rel="icon" href="../favicon.png" type="image/png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+	<body>
+
+		<div class="wrap">
+
+		<header>
+
+			<div class="full clearfix center-txt uppercase">
+				<hgroup>
+						<h2><a href="../">Rachel Whiting</a></h2>
+						<p id="sub-header">Photographer</p>
+				</hgroup>
+
+				<nav>
+					<ul>
+						
+							<li>
+								<a href="../commissioned-photography/" class="">Commissioned Photography</a>
+							</li>
+
+						
+							<li>
+								<a href="../tear-sheets/" class=" active-link ">Tear Sheets</a>
+							</li>
+
+						
+							<li>
+								<a href="../personal-photography/" class="">Personal Photography</a>
+							</li>
+
+						
+							<li>
+								<a href="../about-and-contact/" class="">About & Contact</a>
+							</li>
+
+											</ul>
+				</nav>
+
+			</div>
+
+		</header>
+
+<div id="thumb-list" class="tabs">
+	<ul>
+				    <li><a href="#1"><img src="../content/2.tear-sheets/YOU-VALENTINES_sml.jpg" alt=""></a></li>
+				    <li><a href="#2"><img src="../content/2.tear-sheets/YOU-VALENTINES-02_sml.jpg" alt=""></a></li>
+				    <li><a href="#3"><img src="../content/2.tear-sheets/WONDERWOMAN-B_sml.jpg" alt=""></a></li>
+				    <li><a href="#4"><img src="../content/2.tear-sheets/WINDERWOMAN-A_sml.jpg" alt=""></a></li>
+				    <li><a href="#5"><img src="../content/2.tear-sheets/RED-SUPERFOOD_sml.jpg" alt=""></a></li>
+				    <li><a href="#6"><img src="../content/2.tear-sheets/RED-MILK-BOTTLE_sml.jpg" alt=""></a></li>
+				    <li><a href="#7"><img src="../content/2.tear-sheets/RED-HEALTH-WELLIES_sml.jpg" alt=""></a></li>
+				    <li><a href="#8"><img src="../content/2.tear-sheets/RED-HEALTH-VEG_sml.jpg" alt=""></a></li>
+				    <li><a href="#9"><img src="../content/2.tear-sheets/RED-HEALTH-POPCORN_sml.jpg" alt=""></a></li>
+				    <li><a href="#10"><img src="../content/2.tear-sheets/RED-HEALTH-HERBAL-TEA_sml.jpg" alt=""></a></li>
+				    <li><a href="#11"><img src="../content/2.tear-sheets/RED-HEALTH-CUP-&-NOTEBOOK_sml.jpg" alt=""></a></li>
+				    <li><a href="#12"><img src="../content/2.tear-sheets/RED-HEALTH-AGA_sml.jpg" alt=""></a></li>
+				    <li><a href="#13"><img src="../content/2.tear-sheets/RED-DIRECT_sml.jpg" alt=""></a></li>
+				    <li><a href="#14"><img src="../content/2.tear-sheets/RED-DIRECT-CHRISTMAS-GIFT-LIST_sml.jpg" alt=""></a></li>
+				    <li><a href="#15"><img src="../content/2.tear-sheets/RED-DIRECT-CHRISTMAS-BROCHURE_sml.jpg" alt=""></a></li>
+				    <li><a href="#16"><img src="../content/2.tear-sheets/RED-DIRECT-CHRISTMAS-02_sml.jpg" alt=""></a></li>
+				    <li><a href="#17"><img src="../content/2.tear-sheets/RED-BED_sml.jpg" alt=""></a></li>
+				    <li><a href="#18"><img src="../content/2.tear-sheets/PAULA-PRYKE-JACKET_sml.jpg" alt=""></a></li>
+				    <li><a href="#19"><img src="../content/2.tear-sheets/OBSERVER_sml.jpg" alt=""></a></li>
+				    <li><a href="#20"><img src="../content/2.tear-sheets/LIVING-ETC-GRATER_sml.jpg" alt=""></a></li>
+				    <li><a href="#21"><img src="../content/2.tear-sheets/HOUSE-&-GARDEN-OCTOBER-2010_sml.jpg" alt=""></a></li>
+				    <li><a href="#22"><img src="../content/2.tear-sheets/HOUSE-&-GARDEN-JAN-2012_sml.jpg" alt=""></a></li>
+				    <li><a href="#23"><img src="../content/2.tear-sheets/HOUSE-&-GARDEN-FREY-02_sml.jpg" alt=""></a></li>
+				    <li><a href="#24"><img src="../content/2.tear-sheets/HOUSE-&-GARDEN-FREY-01_sml.jpg" alt=""></a></li>
+				    <li><a href="#25"><img src="../content/2.tear-sheets/HOUSE-&-GARDEN-FINISHING-TOUCHES_sml.jpg" alt=""></a></li>
+				    <li><a href="#26"><img src="../content/2.tear-sheets/HOMES-&-GARDENS_sml.jpg" alt=""></a></li>
+				    <li><a href="#27"><img src="../content/2.tear-sheets/HOMES-&-ANTIQUES-SEPTEMBER-2011_sml.jpg" alt=""></a></li>
+				    <li><a href="#28"><img src="../content/2.tear-sheets/HOMES-&-ANTIQUES-PRESENTS_sml.jpg" alt=""></a></li>
+				    <li><a href="#29"><img src="../content/2.tear-sheets/HOMES-&-ANTIQUES-NOVEMBER-2011_sml.jpg" alt=""></a></li>
+				    <li><a href="#30"><img src="../content/2.tear-sheets/HOMES-&-ANTIQUES-MARCH-2012_sml.jpg" alt=""></a></li>
+				    <li><a href="#31"><img src="../content/2.tear-sheets/COUNTRY-LIVING-OCTOBER-2009_sml.jpg" alt=""></a></li>
+				    <li><a href="#32"><img src="../content/2.tear-sheets/COUNTRY-LIVING-NOVEMBER-2007_sml.jpg" alt=""></a></li>
+				    <li><a href="#33"><img src="../content/2.tear-sheets/COUNTRY-LIVING-MARCH-2012_sml.jpg" alt=""></a></li>
+				    <li><a href="#34"><img src="../content/2.tear-sheets/COUNTRY-LIVING-JULY-2011_sml.jpg" alt=""></a></li>
+				    <li><a href="#35"><img src="../content/2.tear-sheets/COUNTRY-LIVING-FEBRUARY-2012_sml.jpg" alt=""></a></li>
+				    <li><a href="#36"><img src="../content/2.tear-sheets/COUNTRY-LIVING-BOLD-&-BEAUTIFUL_sml.jpg" alt=""></a></li>
+				    <li><a href="#37"><img src="../content/2.tear-sheets/COAST-FIND-VASE_sml.jpg" alt=""></a></li>
+				    <li><a href="#38"><img src="../content/2.tear-sheets/COAST-FIND-SIGNS_sml.jpg" alt=""></a></li>
+				    <li><a href="#39"><img src="../content/2.tear-sheets/COAST-FIND-SHELLS_sml.jpg" alt=""></a></li>
+				    <li><a href="#40"><img src="../content/2.tear-sheets/COAST-FIND-DECKCHAIR_sml.jpg" alt=""></a></li>
+				    <li><a href="#41"><img src="../content/2.tear-sheets/BOMBAY-DUCK_sml.jpg" alt=""></a></li>
+				    <li><a href="#42"><img src="../content/2.tear-sheets/41_sml.jpg" alt=""></a></li>
+				    <li><a href="#43"><img src="../content/2.tear-sheets/40_sml.jpg" alt=""></a></li>
+				    <li><a href="#44"><img src="../content/2.tear-sheets/39_sml.jpg" alt=""></a></li>
+				    <li><a href="#45"><img src="../content/2.tear-sheets/38_sml.jpg" alt=""></a></li>
+				    <li><a href="#46"><img src="../content/2.tear-sheets/37_sml.jpg" alt=""></a></li>
+				    <li><a href="#47"><img src="../content/2.tear-sheets/36_sml.jpg" alt=""></a></li>
+				    <li><a href="#48"><img src="../content/2.tear-sheets/35_sml.jpg" alt=""></a></li>
+				    <li><a href="#49"><img src="../content/2.tear-sheets/34_sml.jpg" alt=""></a></li>
+				    <li><a href="#50"><img src="../content/2.tear-sheets/33_sml.jpg" alt=""></a></li>
+				    <li><a href="#51"><img src="../content/2.tear-sheets/32_sml.jpg" alt=""></a></li>
+				    <li><a href="#52"><img src="../content/2.tear-sheets/31_sml.jpg" alt=""></a></li>
+				    <li><a href="#53"><img src="../content/2.tear-sheets/30_sml.jpg" alt=""></a></li>
+				    <li><a href="#54"><img src="../content/2.tear-sheets/29_sml.jpg" alt=""></a></li>
+				    <li><a href="#55"><img src="../content/2.tear-sheets/28_sml.jpg" alt=""></a></li>
+				    <li><a href="#56"><img src="../content/2.tear-sheets/27_sml.jpg" alt=""></a></li>
+				    <li><a href="#57"><img src="../content/2.tear-sheets/26_sml.jpg" alt=""></a></li>
+				    <li><a href="#58"><img src="../content/2.tear-sheets/25_sml.jpg" alt=""></a></li>
+				    <li><a href="#59"><img src="../content/2.tear-sheets/24_sml.jpg" alt=""></a></li>
+				    <li><a href="#60"><img src="../content/2.tear-sheets/23_sml.jpg" alt=""></a></li>
+				    <li><a href="#61"><img src="../content/2.tear-sheets/22_sml.jpg" alt=""></a></li>
+				    <li><a href="#62"><img src="../content/2.tear-sheets/21_sml.jpg" alt=""></a></li>
+				    <li><a href="#63"><img src="../content/2.tear-sheets/20_sml.jpg" alt=""></a></li>
+				    <li><a href="#64"><img src="../content/2.tear-sheets/19_sml.jpg" alt=""></a></li>
+				    <li><a href="#65"><img src="../content/2.tear-sheets/18_sml.jpg" alt=""></a></li>
+				    <li><a href="#66"><img src="../content/2.tear-sheets/17_sml.jpg" alt=""></a></li>
+				    <li><a href="#67"><img src="../content/2.tear-sheets/16_sml.jpg" alt=""></a></li>
+				    <li><a href="#68"><img src="../content/2.tear-sheets/15_sml.jpg" alt=""></a></li>
+				    <li><a href="#69"><img src="../content/2.tear-sheets/14_sml.jpg" alt=""></a></li>
+				    <li><a href="#70"><img src="../content/2.tear-sheets/13_sml.jpg" alt=""></a></li>
+				    <li><a href="#71"><img src="../content/2.tear-sheets/12_sml.jpg" alt=""></a></li>
+				    <li><a href="#72"><img src="../content/2.tear-sheets/11_sml.jpg" alt=""></a></li>
+				    <li><a href="#73"><img src="../content/2.tear-sheets/10_sml.jpg" alt=""></a></li>
+				    <li><a href="#74"><img src="../content/2.tear-sheets/09_sml.jpg" alt=""></a></li>
+				    <li><a href="#75"><img src="../content/2.tear-sheets/08_sml.jpg" alt=""></a></li>
+				    <li><a href="#76"><img src="../content/2.tear-sheets/07_sml.jpg" alt=""></a></li>
+				    <li><a href="#77"><img src="../content/2.tear-sheets/06_sml.jpg" alt=""></a></li>
+				    <li><a href="#78"><img src="../content/2.tear-sheets/05_sml.jpg" alt=""></a></li>
+				    <li><a href="#79"><img src="../content/2.tear-sheets/04_sml.jpg" alt=""></a></li>
+				    <li><a href="#80"><img src="../content/2.tear-sheets/03_sml.jpg" alt=""></a></li>
+				    <li><a href="#81"><img src="../content/2.tear-sheets/02_sml.jpg" alt=""></a></li>
+				    <li><a href="#82"><img src="../content/2.tear-sheets/01_sml.jpg" alt=""></a></li>
+			</ul>
+</div>
+		<!--Arrow Navigation-->
+		<a id="back-to-thumbs" class="slide-nav" href=""></a>
+		<a id="prevslide" class="load-item slide-nav"></a>
+		<a id="nextslide" class="load-item slide-nav"></a>
+
+
+		</div><!-- .wrap -->
+		
+		<!-- S C R I P T S (default) -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/plugins.js"></script>
+		<script type="text/javascript" src="../public/js/action.js"></script>
+			
+			
+								
+			<!-- S C R I P T (slideshow) -->
+			<script type="text/javascript" language="javascript">
+	
+				jQuery(document).ready(function() {
+				
+					$('#supersized img').hide();
+				
+				/*	SLIDESHOW
+				 *  ------------------------------------------
+				 *	• call the slideshow based on hashchange
+				 *  ------------------------------------------
+				 */			 
+					function slideshow( slide ) {		
+						
+						// Grab all of our image urls from the page
+						// rewriting them to the full sized images.
+						
+						var images = [];
+						jQuery('#thumb-list img').each(function() {
+							images.push({'image' : $(this).attr('src').replace('_sml','') });
+						});
+						
+						// Run slideshow plugin
+						return $.supersized({
+							fit_portrait		: 0,
+							fit_always			: 1,
+							// Start from the slected slide
+							start_slide		 : slide,
+							slide_interval   : 3000,
+							transition       : 1,
+							// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right,
+							// 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+							transition_speed : 300,		
+							image_protect	 : 0,
+							slides			 : images
+						});
+					}
+					
+				/*	URL FRAGMENT
+				 *  -------------------------------------------
+				 */
+					$(window).bind( 'hashchange', function(e) {
+					
+					    // Get URL fragment that control the slideshow 
+					    var hash = $.param.fragment();
+					    var slideshow_status = $('#supersized li').length;
+					    
+					    // If you click a thumb
+					    if ( hash !== '' && slideshow_status == '0' ) {
+					    	// Hide thumbs and show slideshow navigation
+					    	$('#thumb-list').fadeOut( 300, function() {
+					    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+					    		// Create the slideshow
+						    	slideshow( hash );
+					    	});
+					    } 
+					});
+				
+					// Trigger the hashchange event when the page loads
+					$(window).trigger( 'hashchange' );
+	
+				});
+			</script>
+
+			
+				
+		<!-- S C R I P T (font) -->
+		<script type="text/javascript">
+		
+			// Webfont crossbrowser script
+			WebFontConfig = {custom: { families: ['sans-serif'],
+				urls: [ '../public/css/fontface.css' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+			
+		</script>
+	</body>
+</html>
