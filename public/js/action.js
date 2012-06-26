@@ -197,5 +197,59 @@ $(document).ready( function() {
 	});
 
 */
+
+
+/*	CREDIT (BCMH logo)
+/*	---------------------------------------------------------------------- */
+
+	// position logo
+	function resize_window() {
+
+		if ( $(window).width() <= 767 ) {
+
+			$('.credit').css({
+				// set phone size proprieties
+
+				// clean desktop size proprieties
+			   'position': '',
+				  'right': '',
+				    'top': '',
+			  'transform': '',
+		  '-ms-transform': '', /* IE 9 */
+		 '-moz-transform': '', /* Firefox */
+	  '-webkit-transform': '', /* Safari and Chrome */
+		   '-o-transform': '' /* Opera */
+			});
+
+		} else {
+
+			height = $(window).height();
+			height = height / 2;
+			$('.credit').css({
+				// set desktop size proprieties
+			   'position': 'fixed',
+				  'right':  0,
+				    'top':  height,
+			  'transform': 'rotate(90deg)',
+		  '-ms-transform': 'rotate(90deg)', /* IE 9 */
+		 '-moz-transform': 'rotate(90deg)', /* Firefox */
+	  '-webkit-transform': 'rotate(90deg)', /* Safari and Chrome */
+		   '-o-transform': 'rotate(90deg)' /* Opera */
+			});
+		}
+	}
+
+	// get it everytime you resize
+	$(window)
+	.resize( function() {
+		resize_window();
+		})
+	.trigger('resize');
+
+	if ( !!document.createElementNS && !!document.createElementNS("http://www.w3.org/2000/svg", 'svg').createSVGRect ) {
+		//alert("SVG Rules");
+	};
+
+
 });
 

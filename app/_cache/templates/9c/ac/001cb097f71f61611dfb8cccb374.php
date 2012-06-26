@@ -26,8 +26,8 @@ class __TwigTemplate_9cac001cb097f71f61611dfb8cccb374 extends Twig_Template
         echo $this->getAttribute($_page_, "content_left");
         echo "
 \t\t</div>
-\t\t
-\t\t<div class=\"clearfix center-txt right\">
+
+\t\t<div class=\"center-txt right\">
 \t\t\t";
         // line 9
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
@@ -35,9 +35,17 @@ class __TwigTemplate_9cac001cb097f71f61611dfb8cccb374 extends Twig_Template
         echo "
 \t\t</div>
 \t</div>
+\t<div class=\"credit center-txt\">
+\t\t";
+        // line 13
+        if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
+        echo $this->getAttribute($_page_, "credit");
+        echo "
+\t</div>
+
 
 ";
-        // line 13
+        // line 17
         $this->env->loadTemplate("partials/footer.html")->display($context);
     }
 
