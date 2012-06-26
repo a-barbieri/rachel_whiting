@@ -159,7 +159,11 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t\t\t\t\tvar images = [];
 \t\t\t\t\t\tjQuery('#thumb-list img').each(function() {
-\t\t\t\t\t\t\timages.push({'image' : \$(this).attr('src').replace('_sml','') });
+\t\t\t\t\t    \tif ( \$(window).width() <= 767 ) {
+\t\t\t\t\t\t\t\timages.push({'image' : \$(this).attr('src').replace('_sml','_med') });
+\t\t\t\t\t    \t} else {
+\t\t\t\t\t\t\t\timages.push({'image' : \$(this).attr('src').replace('_sml','') });
+\t\t\t\t\t    \t}
 \t\t\t\t\t\t});
 
 \t\t\t\t\t\t// Run slideshow plugin
@@ -222,7 +226,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t";
         }
-        // line 168
+        // line 172
         echo "
 \t\t<!-- S C R I P T (font) -->
 \t\t<script type=\"text/javascript\">
@@ -230,7 +234,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t// Webfont crossbrowser script
 \t\t\tWebFontConfig = {custom: { families: ['sans-serif'],
 \t\t\t\turls: [ '";
-        // line 174
+        // line 178
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "public/css/fontface.css' ] }

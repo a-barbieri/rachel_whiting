@@ -1,10 +1,12 @@
 <div id="thumb-list" class="tabs">
 	<ul>
+		{% set counter = 1 %}
 		{% for image in page.images|reverse %}
     		{% if image.small is defined %}
-	    		<li><a href="#{{ loop.index }}">
+	    		<li><a href="#{{ counter }}">
 	    			<img src="{{ image.small }}" alt="{{ image.name }}" />
 			    </a></li>
+			    {% set counter = counter + 1 %}
     		{% endif %}
 		{% endfor %}
 	</ul>

@@ -103,7 +103,11 @@
 
 						var images = [];
 						jQuery('#thumb-list img').each(function() {
-							images.push({'image' : $(this).attr('src').replace('_sml','') });
+					    	if ( $(window).width() <= 767 ) {
+								images.push({'image' : $(this).attr('src').replace('_sml','_med') });
+					    	} else {
+								images.push({'image' : $(this).attr('src').replace('_sml','') });
+					    	}
 						});
 
 						// Run slideshow plugin
