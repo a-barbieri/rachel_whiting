@@ -55,13 +55,15 @@ $(document).ready( function() {
  */
 	$('#back-to-thumbs').click( function() {
 		// if it's a phone...
+
 	    if ( $(window).width() <= 767 ) {
 			// Show thumbs and hide the slideshow
 		    $('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
-		    	$('#thumb-list').fadeIn( 300 );
 			    // show the header
-			    $('header').fadeIn(300);
-		    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+			    $('header').fadeIn(300, function() {
+			    	$('#thumb-list').fadeIn( 300 );
+			    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+			    });
 		    });
 		}
 		// otherwise...
@@ -72,12 +74,13 @@ $(document).ready( function() {
 		    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
 		    });
 		}
+
 	    $.bbq.pushState(); // clean the URL
 	    return false;
 	});
 
 
-/*	Slideshow theme
+/*	SLIDESHO THEME
  *  ------------------------------------------------------------------
  */
 	theme = {
@@ -173,15 +176,26 @@ $(document).ready( function() {
  */
 	$('.menu a').click( function() {
 		if ( $('nav').hasClass('hidden-phone') ) {
-			$(this).text('X');
+			$(this).text('').append('<img src="../img/back-to-menu.png" alt="back-to-menu" width="16" height="14" />');
 			$('nav').hide().removeClass('hidden-phone').slideDown();
 		} else {
-			$(this).text('MENU');
 			$('nav').slideUp( function() {
-				$(this).addClass('hidden-phone')
+				$(this).addClass('hidden-phone').show();
+				$('.menu a').remove('img').text('MENU');
 			});
 		}
 	})
 
+
+/*
+	window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+
+*/
 });
 

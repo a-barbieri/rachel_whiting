@@ -187,34 +187,72 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t\t\t/*\tURL FRAGMENT
 \t\t\t\t *  ----------------------------------------------------------------------
-\t\t\t\t */
+\t\t\t\t *\tThis part of code need A LOT of optimisation please refer to
+\t\t\t\t *\thttp://buildinternet.com/project/supersized/docs.html#api_docs
+\t\t\t\t *\tto rewrite it
+\t\t\t\t *  ---------------------------------------------------------------------- */
+
 \t\t\t\t\t\$(window).bind( 'hashchange', function(e) {
 
 \t\t\t\t\t    // Get URL fragment that control the slideshow
 \t\t\t\t\t    var hash = \$.param.fragment();
 \t\t\t\t\t    var slideshow_status = \$('#supersized li').length;
 
-\t\t\t\t\t    // If you click a thumb
-\t\t\t\t\t    if ( hash !== '' && slideshow_status == '0' ) {
+\t\t\t\t\t    // dirty quick fix. (Issue: this code is running twice when using back-to-thumb button)
+\t\t\t\t\t    // if you've just come to this page
+\t\t\t\t\t    // or if you've got back from the slideshow...
+\t\t\t\t\t    if ( hash == '' ) {
+\t\t\t\t\t\t    if ( \$(window).width() <= 767 ) {
+\t\t\t\t\t\t\t\t// Show thumbs and hide the slideshow
+\t\t\t\t\t\t\t    \$('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
+\t\t\t\t\t\t\t\t    // show the header
+\t\t\t\t\t\t\t\t    \$('header').removeClass('hidden-phone').fadeIn( 300, function() {
+\t\t\t\t\t\t\t\t    \t\$('#thumb-list').fadeIn( 300 );
+\t\t\t\t\t\t\t\t    \t\$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t// otherwise...
+\t\t\t\t\t\t\telse {
+\t\t\t\t\t\t\t\t// Show thumbs and hide the slideshow
+\t\t\t\t\t\t\t    \$('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
+\t\t\t\t\t\t\t    \t\$('#thumb-list').fadeIn( 300 );
+\t\t\t\t\t\t\t    \t\$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t}
+\t\t\t\t\t    }
+
+\t\t\t\t\t    // if you click a thumb...
+\t\t\t\t\t    else if ( hash !== '' && slideshow_status == 0 ) {
 \t\t\t\t\t    \t// Hide thumbs and show slideshow navigation
-\t\t\t\t\t    \t// if you are on a phone hide everything
+\t\t\t\t\t    \t// if it's a phone hide everything
 \t\t\t\t\t    \tif ( \$(window).width() <= 767 ) {
-\t\t\t\t\t    \t\t\$('header').fadeOut(300);
+\t\t\t\t\t    \t\t\$('header').fadeOut( 300 , function() {
+\t\t\t\t\t\t    \t\t\$(this).addClass('hidden-phone').show();
+\t\t\t\t\t    \t\t});
 \t\t\t\t\t\t    \t\$('#thumb-list').fadeOut( 300, function() {
 \t\t\t\t\t\t    \t\t\$('#supersized').css({'top': 50});
 \t\t\t\t\t\t    \t\t\$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after \$.supersized()
+\t\t\t\t\t\t    \t\t\$('#back-to-thumbs').fadeIn( 300 ).css(\"display\",\"block\");
 \t\t\t\t\t\t    \t\t// Create the slideshow
 \t\t\t\t\t\t\t    \tslideshow( hash );
 \t\t\t\t\t\t    \t});
 \t\t\t\t\t    \t}
 \t\t\t\t\t    \t// otherwise just hide thumbs
 \t\t\t\t\t    \telse {
+\t\t\t\t\t    \t\t\$('header').addClass('hidden-phone');
 \t\t\t\t\t\t    \t\$('#thumb-list').fadeOut( 300, function() {
 \t\t\t\t\t\t    \t\t\$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after \$.supersized()
+\t\t\t\t\t\t    \t\t\$('#back-to-thumbs').fadeIn( 300 ).css(\"display\",\"block\");
 \t\t\t\t\t\t    \t\t// Create the slideshow
 \t\t\t\t\t\t\t    \tslideshow( hash );
 \t\t\t\t\t\t    \t});
 \t\t\t\t\t    \t}
+
+\t\t\t\t\t    // if you are going back among slides
+\t\t\t\t\t    } else {
+\t\t\t\t\t\t    api.goTo(hash);
+\t\t\t\t\t\t    console.log(slideshow_status + ' ' + hash + ' not coming from thumbs');
 \t\t\t\t\t    }
 \t\t\t\t\t});
 
@@ -226,7 +264,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t";
         }
-        // line 172
+        // line 210
         echo "
 \t\t<!-- S C R I P T (font) -->
 \t\t<script type=\"text/javascript\">
@@ -234,7 +272,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t// Webfont crossbrowser script
 \t\t\tWebFontConfig = {custom: { families: ['sans-serif'],
 \t\t\t\turls: [ '";
-        // line 178
+        // line 216
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "public/css/fontface.css' ] }

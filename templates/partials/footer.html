@@ -131,34 +131,72 @@
 
 				/*	URL FRAGMENT
 				 *  ----------------------------------------------------------------------
-				 */
+				 *	This part of code need A LOT of optimisation please refer to
+				 *	http://buildinternet.com/project/supersized/docs.html#api_docs
+				 *	to rewrite it
+				 *  ---------------------------------------------------------------------- */
+
 					$(window).bind( 'hashchange', function(e) {
 
 					    // Get URL fragment that control the slideshow
 					    var hash = $.param.fragment();
 					    var slideshow_status = $('#supersized li').length;
 
-					    // If you click a thumb
-					    if ( hash !== '' && slideshow_status == '0' ) {
+					    // dirty quick fix. (Issue: this code is running twice when using back-to-thumb button)
+					    // if you've just come to this page
+					    // or if you've got back from the slideshow...
+					    if ( hash == '' ) {
+						    if ( $(window).width() <= 767 ) {
+								// Show thumbs and hide the slideshow
+							    $('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
+								    // show the header
+								    $('header').removeClass('hidden-phone').fadeIn( 300, function() {
+								    	$('#thumb-list').fadeIn( 300 );
+								    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+								    });
+							    });
+							}
+							// otherwise...
+							else {
+								// Show thumbs and hide the slideshow
+							    $('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
+							    	$('#thumb-list').fadeIn( 300 );
+							    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+							    });
+							}
+					    }
+
+					    // if you click a thumb...
+					    else if ( hash !== '' && slideshow_status == 0 ) {
 					    	// Hide thumbs and show slideshow navigation
-					    	// if you are on a phone hide everything
+					    	// if it's a phone hide everything
 					    	if ( $(window).width() <= 767 ) {
-					    		$('header').fadeOut(300);
+					    		$('header').fadeOut( 300 , function() {
+						    		$(this).addClass('hidden-phone').show();
+					    		});
 						    	$('#thumb-list').fadeOut( 300, function() {
 						    		$('#supersized').css({'top': 50});
 						    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+						    		$('#back-to-thumbs').fadeIn( 300 ).css("display","block");
 						    		// Create the slideshow
 							    	slideshow( hash );
 						    	});
 					    	}
 					    	// otherwise just hide thumbs
 					    	else {
+					    		$('header').addClass('hidden-phone');
 						    	$('#thumb-list').fadeOut( 300, function() {
 						    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+						    		$('#back-to-thumbs').fadeIn( 300 ).css("display","block");
 						    		// Create the slideshow
 							    	slideshow( hash );
 						    	});
 					    	}
+
+					    // if you are going back among slides
+					    } else {
+						    api.goTo(hash);
+						    console.log(slideshow_status + ' ' + hash + ' not coming from thumbs');
 					    }
 					});
 
