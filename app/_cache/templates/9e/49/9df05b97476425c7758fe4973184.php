@@ -108,7 +108,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 
 \t\t";
-        } elseif (($this->getAttribute($_page_, "slug") == "about-and-contact")) {
+        } elseif (($this->getAttribute($_page_, "slug") == "about-page")) {
             // line 61
             echo "\t\t\t";
             // line 62
