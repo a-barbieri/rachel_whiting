@@ -59,15 +59,15 @@ class __TwigTemplate_da04327da438d96594e68e66bf2f2c0b extends Twig_Template
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "name");
         echo "</a></h2>
-\t\t\t\t\t\t<p id=\"sub-header\">";
+\t\t\t\t\t\t<p class=\"sub-header hidden-phone\">";
         // line 23
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "profession");
         echo "</p>
+\t\t\t\t\t\t<p class=\"sub-header menu visible-phone\"><a>MENU</a></p>
 \t\t\t\t</hgroup>
 
-\t\t\t\t<p class=\"visible-phone hidden-tablet hidden-desktop\"><a>MENU</a></p>
-\t\t\t\t<nav class=\"hidden-phone visible-tablet visible-desktop\">
+\t\t\t\t<nav class=\"hidden-phone\">
 \t\t\t\t\t<ul>
 \t\t\t\t\t\t";
         // line 29

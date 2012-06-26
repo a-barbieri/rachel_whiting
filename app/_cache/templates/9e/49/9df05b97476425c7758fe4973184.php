@@ -47,7 +47,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t\t *\t----------------------------------------------------------------------
 \t\t\t\t */
 \t\t\t\t \tfunction resize_slideshow(){
-\t\t\t\t \t\tvar\tmargin = 20;
+\t\t\t\t \t\tvar\tmargin = 10;
 \t\t\t\t \t\t\$('#supersized').css({ 'left': margin });
 \t\t\t\t\t\t\$('#supersized').width( \$(window).width() - margin * 2 );
 \t\t\t\t\t}
@@ -193,11 +193,24 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t\t\t    // If you click a thumb
 \t\t\t\t\t    if ( hash !== '' && slideshow_status == '0' ) {
 \t\t\t\t\t    \t// Hide thumbs and show slideshow navigation
-\t\t\t\t\t    \t\$('#thumb-list').fadeOut( 300, function() {
-\t\t\t\t\t    \t\t\$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after \$.supersized()
-\t\t\t\t\t    \t\t// Create the slideshow
-\t\t\t\t\t\t    \tslideshow( hash );
-\t\t\t\t\t    \t});
+\t\t\t\t\t    \t// if you are on a phone hide everything
+\t\t\t\t\t    \tif ( \$(window).width() <= 767 ) {
+\t\t\t\t\t    \t\t\$('header').fadeOut(300);
+\t\t\t\t\t\t    \t\$('#thumb-list').fadeOut( 300, function() {
+\t\t\t\t\t\t    \t\t\$('#supersized').css({'top': 50});
+\t\t\t\t\t\t    \t\t\$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after \$.supersized()
+\t\t\t\t\t\t    \t\t// Create the slideshow
+\t\t\t\t\t\t\t    \tslideshow( hash );
+\t\t\t\t\t\t    \t});
+\t\t\t\t\t    \t}
+\t\t\t\t\t    \t// otherwise just hide thumbs
+\t\t\t\t\t    \telse {
+\t\t\t\t\t\t    \t\$('#thumb-list').fadeOut( 300, function() {
+\t\t\t\t\t\t    \t\t\$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after \$.supersized()
+\t\t\t\t\t\t    \t\t// Create the slideshow
+\t\t\t\t\t\t\t    \tslideshow( hash );
+\t\t\t\t\t\t    \t});
+\t\t\t\t\t    \t}
 \t\t\t\t\t    }
 \t\t\t\t\t});
 
@@ -209,7 +222,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 
 \t\t";
         }
-        // line 155
+        // line 168
         echo "
 \t\t<!-- S C R I P T (font) -->
 \t\t<script type=\"text/javascript\">
@@ -217,7 +230,7 @@ class __TwigTemplate_9e499df05b97476425c7758fe4973184 extends Twig_Template
 \t\t\t// Webfont crossbrowser script
 \t\t\tWebFontConfig = {custom: { families: ['sans-serif'],
 \t\t\t\turls: [ '";
-        // line 161
+        // line 174
         if (isset($context["page"])) { $_page_ = $context["page"]; } else { $_page_ = null; }
         echo $this->getAttribute($_page_, "root_path");
         echo "public/css/fontface.css' ] }

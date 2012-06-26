@@ -21,7 +21,7 @@
 				 *	----------------------------------------------------------------------
 				 */
 				 	function resize_slideshow(){
-				 		var	margin = 20;
+				 		var	margin = 10;
 				 		$('#supersized').css({ 'left': margin });
 						$('#supersized').width( $(window).width() - margin * 2 );
 					}
@@ -137,11 +137,24 @@
 					    // If you click a thumb
 					    if ( hash !== '' && slideshow_status == '0' ) {
 					    	// Hide thumbs and show slideshow navigation
-					    	$('#thumb-list').fadeOut( 300, function() {
-					    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
-					    		// Create the slideshow
-						    	slideshow( hash );
-					    	});
+					    	// if you are on a phone hide everything
+					    	if ( $(window).width() <= 767 ) {
+					    		$('header').fadeOut(300);
+						    	$('#thumb-list').fadeOut( 300, function() {
+						    		$('#supersized').css({'top': 50});
+						    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+						    		// Create the slideshow
+							    	slideshow( hash );
+						    	});
+					    	}
+					    	// otherwise just hide thumbs
+					    	else {
+						    	$('#thumb-list').fadeOut( 300, function() {
+						    		$('.slide-nav, #supersized, #supersized-loader').fadeIn( 300 ); // #supersized needs to be after $.supersized()
+						    		// Create the slideshow
+							    	slideshow( hash );
+						    	});
+					    	}
 					    }
 					});
 

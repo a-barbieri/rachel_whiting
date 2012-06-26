@@ -20,11 +20,11 @@
 			<div class="full clearfix center-txt uppercase">
 				<hgroup>
 						<h2><a href="{{ page.root_path }}">{{ page.name }}</a></h2>
-						<p id="sub-header">{{ page.profession }}</p>
+						<p class="sub-header hidden-phone">{{ page.profession }}</p>
+						<p class="sub-header menu visible-phone"><a>MENU</a></p>
 				</hgroup>
 
-				<p class="visible-phone hidden-tablet hidden-desktop"><a>MENU</a></p>
-				<nav class="hidden-phone visible-tablet visible-desktop">
+				<nav class="hidden-phone">
 					<ul>
 						{% for child in page.root %}
 

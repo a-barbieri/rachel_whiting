@@ -2,6 +2,7 @@
 
 /*	IMAGE RESIZE SETTINGS
  *	--------------------------------------------------------
+ *	http://net.tutsplus.com/tutorials/php/image-resizing-made-easy-with-php/
  */
 
 Class resize
@@ -71,7 +72,7 @@ Class resize
 	}
 
 	## --------------------------------------------------------
-	
+
 	private function getDimensions($newWidth, $newHeight, $option)
 	{
 
@@ -235,6 +236,7 @@ Class resize
 }
 
 
+
 /*	IMAGE LOADER
  *	--------------------------------------------------------
  */
@@ -243,40 +245,121 @@ Class resize
 $directories = array(
 	'./content/1.commissioned-photography',
 	'./content/2.tear-sheets',
-	'./content/3.personal-photography'
+	'./content/3.personal-photography',
+	'./content/index'
 	);
 
 foreach ($directories as $dir) {
 
 	$scandir = scandir($dir);
-	
-	foreach ($scandir as $file) {	
-	
+
+	// check whats in the directories
+	foreach ($scandir as $file) {
+
 		// $file_name = stristr($file, '.', true); // works only with PHP 5.3
-		$filexplode = explode('.', $file, 2); // works with any PHP
-		$filename = $filexplode[0];
+		$file_explode = explode('.', $file, 2); // works with any PHP
+		$file_name = $file_explode[0];
 		$extension = stristr($file, '.');
-		
+
+		// if it's an image
 		if ( $extension == '.jpg' || $extension == '.jpeg' || $extension == '.png' ) {
-			
-			if (stristr($filename, 'sml')){
-			
-				// do nothing
-				
+
+			// if this file is small
+			// if (stristr($file_name, 'sml')){
+			if ( preg_match( '/_sml/', $file_name) ) {
+
+				// store sml $file_name in a $sml array
+				$smlsize[] = $file_name;
+
+
+			// if this file is medium
+			} else if ( preg_match( '/_med/', $file_name ) ){
+
+				// store med file_name in a $med array
+				$medsize[] = $file_name;
+
+			// if it's a normal file
 			} else {
-			
+
+				// store full file_name in a $fullsize array
+				$fullsize[] = $file_name;
+			}
+
+
+		}
+
+	}
+
+	// create a list of files that need a a small or medium version
+	$todo_sml = array_diff( $fullsize, $smlsize);
+	$todo_med = array_diff( $fullsize, $medsize);
+
+
+	/*
+	// just for developer: var_dump() $todo_sml and $todo_med to check them
+	echo '<br /><br />' . $dir . '<br /><br />$todo_sml <br /><br />';
+	var_dump($todo_sml);
+	echo '<br /><br />$todo_med<br /><br />';
+	var_dump($todo_med);
+	*/
+
+/*
+
+WORKING ON IT
+need to check before run the ResizeImage function
+
+	// dirty reset of $scandir
+	$scandir = scandir($dir);
+
+	// if small size doesn't exist create it
+	foreach ( $scandir as $file ) {
+
+		$file_explode = explode('.', $file, 2); // works with any PHP
+		$file_name = $file_explode[0];
+
+		// if it's an image
+		if ( $extension == '.jpg' || $extension == '.jpeg' || $extension == '.png' ) {
+
+			// if it's in the "to-do small file" list create a small file
+			if ( array_search( $file_name, $todo_sml ) ) {
+
+				echo "$file_name needs to be done<br />";
+			}
+
+			// if it's in the "to-do medium file" list create a medium file
+			if ( array_search( $file_name, $todo_med ) ) {
+
+				echo "$file_name needs to be done<br />";
+			}
+
+			echo "$file_name needs to be done<br />";
+
+		}
+
+	}
+*/
+
+
+/*
 				// *** 1) Initialize / load image
 				$resizeObj = new resize($dir . '/' . $file);
-				
+
 				// *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
 				$resizeObj -> resizeImage( 155, '', 'landscape');
-				
+
 				// *** 3) Save image
 				$resizeObj -> saveImage($dir . '/' . $filename . '_sml' . $extension, 90);
-			
-			}
-		}
-	}
+
+				// *** 1) Initialize / load image
+				$resizeObj = new resize($dir . '/' . $file);
+
+				// *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
+				$resizeObj -> resizeImage( 700, 700, 'auto');
+
+				// *** 3) Save image
+				$resizeObj -> saveImage($dir . '/' . $filename . '_med' . $extension, 90);
+*/
+
 }
 
 $resize_image_result = 'Done! All images have been processed.';

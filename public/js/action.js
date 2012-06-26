@@ -4,7 +4,7 @@ $(document).ready( function() {
  *  ------------------------------------------------------------------
  */
 	 function prevnext( n ) {
-	 
+
 	    // Get current hash
 	    var hash = $.param.fragment();
 	 	// Get number of images in the thumb list
@@ -12,13 +12,13 @@ $(document).ready( function() {
 	    // Get number for the prev/next slide
 	    var slide_num = parseInt(hash.slice(0),10);
 	    var new_slide_num = slide_num + n;
-	    
+
 	    // Going from first to last slide
 	    if ( new_slide_num == 0 ) {
 	    	// … and the images are less than 10
 	    	if ( image_total < 10) {
 	    		var hash_new = '#0' + image_total;
-	    	// … otherwise do that 
+	    	// … otherwise do that
 	    	} else {
 	    		var hash_new = '#' + image_total;
 	    	}
@@ -39,7 +39,7 @@ $(document).ready( function() {
 	    $.bbq.pushState(hash_new);
 	 }
 
-	 
+
 	 $('#prevslide').click( function(e) {
 	    prevnext( -1 );
 	    e.preventDefault();
@@ -48,18 +48,30 @@ $(document).ready( function() {
 	    prevnext( +1 );
 	    e.preventDefault();
 	 });
-	 
-	 
+
+
 /*	BACK TO THUMBS BUTTON
  *  ------------------------------------------------------------------
  */
 	$('#back-to-thumbs').click( function() {
-
-	    // Show thumbs and hide the slideshow
-	    $('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
-	    	$('#thumb-list').fadeIn( 300 );
-	    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
-	    });
+		// if it's a phone...
+	    if ( $(window).width() <= 767 ) {
+			// Show thumbs and hide the slideshow
+		    $('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
+		    	$('#thumb-list').fadeIn( 300 );
+			    // show the header
+			    $('header').fadeIn(300);
+		    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+		    });
+		}
+		// otherwise...
+		else {
+			// Show thumbs and hide the slideshow
+		    $('.slide-nav, #supersized, #supersized-loader').fadeOut( 300, function() {
+		    	$('#thumb-list').fadeIn( 300 );
+		    	$('#supersized').empty(); // reset the slideshow to the initial state (see URL FRAGMENT)
+		    });
+		}
 	    $.bbq.pushState(); // clean the URL
 	    return false;
 	});
@@ -69,24 +81,24 @@ $(document).ready( function() {
  *  ------------------------------------------------------------------
  */
 	theme = {
-	 	
+
 	 	/* Initial Placement
 		----------------------------*/
 	 	_init : function(){
-	 		
+
 	 		// Center Slide Links
 	 		if (api.options.slide_links) $(vars.slide_list).css('margin-left', -$(vars.slide_list).width()/2);
-			
+
 			/* Navigation Items
 			----------------------------*/
 		    $(vars.next_slide).click(function() {
 		    	api.nextSlide();
 		    });
-		    
+
 		    $(vars.prev_slide).click(function() {
 		    	api.prevSlide();
 		    });
-		    			
+
 			if (api.options.thumbnail_navigation){
 				// Next thumbnail clicked
 				$(vars.next_thumb).click(function() {
@@ -97,18 +109,18 @@ $(document).ready( function() {
 			    	api.prevSlide();
 			    });
 			}
-			
+
 		    $(vars.play_button).click(function() {
-				api.playToggle();						    
+				api.playToggle();
 		    });
-	 	},	 	
-	 	
+	 	},
+
 	 	/* Before Slide Transition
 		----------------------------*/
 	 	beforeAnimation : function(direction){
 
 		    if (api.options.progress_bar && !vars.is_paused) $(vars.progress_bar).stop().animate({left : -$(window).width()}, 0 );
-		  	
+
 		  	/* Update Fields
 		  	----------------------------*/
 		  	// Update slide caption
@@ -119,40 +131,57 @@ $(document).ready( function() {
 			if (vars.slide_current.length){
 			    $(vars.slide_current).html(vars.current_slide + 1);
 			}
-		    
+
 		    // Highlight current thumbnail and adjust row position
 		    if (api.options.thumb_links){
-		    
+
 				$('.current-thumb').removeClass('current-thumb');
-				$('li', vars.thumb_list).eq(vars.current_slide).addClass('current-thumb');				
+				$('li', vars.thumb_list).eq(vars.current_slide).addClass('current-thumb');
 			}
 	 	}
 	 };
-	 
+
 	 /* Theme Specific Variables
 	 ----------------------------*/
 	 $.supersized.themeVars = {
 
 	 	// Internal Variables
 		image_path			:	'img/',				// Default image path
-													
-		// General Elements							
+
+		// General Elements
 		next_slide			:	'#nextslide',		// Next slide button
 		prev_slide			:	'#prevslide',		// Prev slide button
-		
+
 		slide_caption		:	'#slidecaption',	// Slide caption
 		slide_current		:	'.slidenumber',		// Current slide number
 		slide_total			:	'.totalslides',		// Total Slides
-		slide_list			:	'#slide-list'		// Slide jump list							
-	 };	
-	 											
+		slide_list			:	'#slide-list'		// Slide jump list
+	 };
+
 	 /* Theme Specific Options
-	 ----------------------------*/												
-	 $.supersized.themeOptions = {					
+	 ----------------------------*/
+	 $.supersized.themeOptions = {
 
 		autoplay				:	0,		// Slideshow starts playing automatically
-		new_window				:	0			// Image links open in new window/tab   
+		new_window				:	0			// Image links open in new window/tab
 	 };
+
+
+
+/*	RESPONSIVE MENU
+ *	----------------------------------------------------------------------
+ */
+	$('.menu a').click( function() {
+		if ( $('nav').hasClass('hidden-phone') ) {
+			$(this).text('X');
+			$('nav').hide().removeClass('hidden-phone').slideDown();
+		} else {
+			$(this).text('MENU');
+			$('nav').slideUp( function() {
+				$(this).addClass('hidden-phone')
+			});
+		}
+	})
 
 });
 
