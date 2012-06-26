@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Rachel Whiting, Home</title>
+
+		<!-- S T Y L E (default) -->
+		<link rel="stylesheet" media="screen" href="./public/css/style.css" />
+		<link rel="stylesheet" media="screen" href="./public/css/queries.css" />
+		<link rel="icon" href="./favicon.png" type="image/png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+	<body>
+
+		<div class="wrap">
+
+		<header>
+
+			<div class="full clearfix center-txt uppercase">
+				<hgroup>
+						<h2><a href="./">Rachel Whiting</a></h2>
+						<p class="sub-header hidden-phone">Photographer</p>
+						<p class="sub-header menu visible-phone"><a>MENU</a></p>
+				</hgroup>
+
+				<nav class="hidden-phone">
+					<ul>
+						
+							<li>
+								<a href="./commissioned-photography/" class="">Commissioned Photography</a>
+							</li>
+
+						
+							<li>
+								<a href="./tear-sheets/" class="">Tear Sheets</a>
+							</li>
+
+						
+							<li>
+								<a href="./personal-photography/" class="">Personal Photography</a>
+							</li>
+
+						
+							<li>
+								<a href="./about-and-contact/" class="">About & Contact</a>
+							</li>
+
+											</ul>
+				</nav>
+
+			</div>
+
+		</header>
+
+
+
+		</div><!-- .wrap -->
+
+		<!-- S C R I P T S (default) -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="./public/js/plugins.js"></script>
+		<script type="text/javascript" src="./public/js/action.js"></script>
+
+
+					
+			<!-- S C R I P T (random image) -->
+			<script type="text/javascript">
+
+				jQuery(document).ready(function($){
+
+
+				/*	Workaround to have left/right margins on slideshow
+				 *  https://github.com/buildinternet/supersized/issues/72
+				 *	----------------------------------------------------------------------
+				 */
+				 	function resize_slideshow(){
+				 		var	margin = 10;
+				 		$('#supersized').css({ 'left': margin });
+						$('#supersized').width( $(window).width() - margin * 2 );
+					}
+					$(window)
+						.resize( function() { resize_slideshow() })
+						.trigger('resize');
+
+
+				/*	SLIDESHOW
+				 *  ----------------------------------------------------------------------
+				 */
+					$.supersized({
+						fit_portrait		: 0,
+						fit_always			: 1,
+						horizontal_center	: 1,
+						slide_interval      : 3000,			// Length between transitions
+						transition          : 1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right,
+															// 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+						transition_speed	: 700,			// Speed of transition
+						image_protect		: 0,
+						random				: 1,
+						slides 				:  	[
+																								{image : './content/index/01.jpg'},
+																																{image : './content/index/01_med.jpg'},
+																											]
+					});
+			    });
+			</script>
+
+
+		
+		<!-- S C R I P T (font) -->
+		<script type="text/javascript">
+
+			// Webfont crossbrowser script
+			WebFontConfig = {custom: { families: ['sans-serif'],
+				urls: [ './public/css/fontface.css' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+		</script>
+	</body>
+</html>
