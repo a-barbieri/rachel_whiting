@@ -33,17 +33,34 @@ class __TwigTemplate_e2740ec1351c7a8039f177b399426cc9 extends Twig_Template
         }
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
             // line 4
-            echo "\t\t    <li><a href=\"#";
-            if (isset($context["loop"])) { $_loop_ = $context["loop"]; } else { $_loop_ = null; }
-            echo $this->getAttribute($_loop_, "index");
-            echo "\"><img src=\"";
+            echo "\t    \t\t";
+            // line 5
+            echo "\t    \t\t";
             if (isset($context["image"])) { $_image_ = $context["image"]; } else { $_image_ = null; }
-            echo $this->getAttribute($_image_, "small");
-            echo "\" alt=\"";
-            if (isset($context["image"])) { $_image_ = $context["image"]; } else { $_image_ = null; }
-            echo $this->getAttribute($_image_, "title");
-            echo "\"></a></li>
-\t\t";
+            if ($this->getAttribute($_image_, "small", array(), "any", true, true)) {
+                // line 6
+                echo "\t\t    \t\t<li><a href=\"#";
+                if (isset($context["loop"])) { $_loop_ = $context["loop"]; } else { $_loop_ = null; }
+                echo $this->getAttribute($_loop_, "index");
+                echo "\">
+\t\t    \t\t\t<img src=\"";
+                // line 7
+                if (isset($context["image"])) { $_image_ = $context["image"]; } else { $_image_ = null; }
+                echo $this->getAttribute($_image_, "small");
+                echo "\" alt=\"";
+                if (isset($context["image"])) { $_image_ = $context["image"]; } else { $_image_ = null; }
+                echo $this->getAttribute($_image_, "name");
+                echo "\" />
+\t\t\t\t    </a></li>
+\t    \t\t";
+                // line 10
+                echo "\t    \t\t";
+            } else {
+                // line 11
+                echo "\t    \t\t";
+            }
+            // line 12
+            echo "\t\t";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
             $context['loop']['first'] = false;
@@ -56,7 +73,7 @@ class __TwigTemplate_e2740ec1351c7a8039f177b399426cc9 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 6
+        // line 13
         echo "\t</ul>
 </div>";
     }
